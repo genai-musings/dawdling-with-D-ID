@@ -1,6 +1,7 @@
 import logging
 import os
 import sys
+
 from didAnimations import Animations
 
 # Configure logging
