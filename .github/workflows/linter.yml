@@ -32,6 +32,7 @@ jobs:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_MD: true
+          VALIDATE_PYTHON: true
           VALIDATE_YML: true
           VALIDATE_HTML: false
           # Flag to enable additional information about the linter, versions, and additional output.

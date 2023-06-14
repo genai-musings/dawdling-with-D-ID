@@ -1,51 +1,31 @@
-# Template, Repository Template - README.md
+# dawdling-with-D-ID [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 
-This is a template repository for creating new repositories with pre-configured settings and files commonly used in my projects.
+Repository for dawdling with D-ID Studio.
 
-It includes bug and feature issue templates, a pull request (PR) template, spelling check, superlinter (YML & Markdown validation enabled) action, stale issues & PR GitHub actions, and codeowners, changelog, and contributing Markdown files.
+ This repository contains Python code, and associated unit tests, which uses the D-ID Studio API to retrieve animations from an account.
 
-## Contents Include
+## To run program
 
-- ```.github/ISSUE_TEMPLATE/bug.md```: Template for reporting bugs.
+Your D-ID key needs to be passed to program via an environment variable
 
-- ```.github/ISSUE_TEMPLATE/feature.md```: Template for suggesting new features.
+```shell
+export DID_KEY="Your DID Api key"
+python main.py
+```
 
-- ```.github/PULL_REQUEST_TEMPLATE.md```: Template for creating pull requests.
+To generate an D-ID key browse to [D-ID API Keys](https://studio.d-id.com/account-settings) and select "Generate key".
 
-- ```.github/workflows/greetings.yml```: GitHub Actions workflow for automated Greeting messages.
+## Credits
 
-- ```.github/workflows/linter.yml```: GitHub Actions workflow for YML & Markdown validation.
+You can generate animations using a trial account at [D-ID Studio](https://studio.d-id.com/). To generate images you need credits, after the trial period expires you will need to purchase [D-ID Studio Credits](https://www.d-id.com/pricing/).
 
-- ```.github/workflows/md-links.yml```: GitHub Actions workflow for Markdown link validation.
+## To run unit tests
 
-- ```.github/workflows/spellingcheck.yml```: GitHub Actions workflow for spell checking Markdown.
+```shell
+pytest
+```
 
-- ```.github/workflows/stale.yml```: GitHub Actions workflow for managing stale issues and pull requests.
+## D-ID Studio API Reference
 
-- ```.github/CODEOWNERS```: File to specify code owners for the repository.
+For more information on the API available see the [D-ID Studio API Reference Documentation](https://docs.d-id.com/reference/get-started).
 
-- ```CHANGELOG.md```: File to track changes made to the repository.
-
-- ```CONTRIBUTING.md```: Guidelines for contributing to the project.
-
-- ```LICENSE```: MPL 2.0 license file.
-
-- ```README.md```: This file.
-
-## TODO
-
-Please review the contents of this repository and customize them to fit your project's specific requirements.
-
-The following changes need to be made:
-
-- Update [GitHub issue](https://github.com/orgname/reponame/issues/new) URL in ```CONTRIBUTING.md```.
-
-- Add any keys / secret files to ```.gitignore```.
-
-- Review and update ```CODEOWNERS```.
-
-- Review and enable required linters in the ```.github/workflows/linter.yml``` GitHub action.
-
-## Licensed to Code
-
-You are now licensed to code. Happy collaborations!
