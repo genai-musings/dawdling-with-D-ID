@@ -7,7 +7,7 @@ from didAnimations import Animations
 logging.basicConfig(level=logging.ERROR)
 
 # Get the API key
-api_key = os.environ.get('DID_KEY')
+api_key = os.environ.get("DID_KEY")
 if not api_key:
     error_message = "DID_KEY environment variable is not set."
     logging.error(error_message)

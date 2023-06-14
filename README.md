@@ -28,4 +28,3 @@ pytest
 ## D-ID Studio API Reference
 
 For more information on the API available see the [D-ID Studio API Reference Documentation](https://docs.d-id.com/reference/get-started).
-

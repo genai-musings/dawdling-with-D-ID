@@ -1,6 +1,7 @@
 import logging
 import requests
 
+
 class Animations:
     def __init__(self, api_key):
         """
@@ -20,8 +21,8 @@ class Animations:
             list: A list of animations if successful, None otherwise.
         """
         headers = {
-            'Authorization': f'Bearer {self.api_key}',
-            'Accept': 'application/json'
+            "Authorization": f"Bearer {self.api_key}",
+            "Accept": "application/json",
         }
 
         try:
