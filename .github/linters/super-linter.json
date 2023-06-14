@@ -1,7 +1,0 @@
-{
-  "linters": {
-    "isort": {
-      "enabled": false
-    }
-  }
-}
