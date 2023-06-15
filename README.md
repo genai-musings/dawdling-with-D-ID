@@ -1,4 +1,4 @@
-# dawdling-with-D-ID [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0) [![GitHub Super-Linter](https://github.com/tom-halpin/dawdling-with-D-ID/actions/workflows/SuperLinterWorkflow/badge.svg)](https://github.com/marketplace/actions/super-linter)
+# dawdling-with-D-ID [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0) [![GitHub Super-Linter](https://github.com/tom-halpin/dawdling-with-D-ID/actions/workflows/linter.yml/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
 Repository for dawdling with D-ID Studio.
 
