@@ -60,6 +60,5 @@ class TestAnimations(unittest.TestCase):
             f"Error getting animations: {exception_mock}"
         )
 
-
 if __name__ == "__main__":
     unittest.main()
