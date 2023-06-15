@@ -35,7 +35,6 @@ jobs:
           VALIDATE_MD: true
           VALIDATE_PYTHON: true
           VALIDATE_YML: true
-          VALIDATE_HTML: false
           # Flag to enable additional information about the linter, versions, and additional output.
           ACTIONS_RUNNER_DEBUG: false
           # Flag to have the linter complete with exit code 0 even if errors were detected.
