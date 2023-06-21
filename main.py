@@ -1,8 +1,9 @@
 import logging
+import json
 import os
 import sys
 
-from didAnimations import Animations
+from didTalks import Talks
 
 # Configure logging
 logging.basicConfig(level=logging.ERROR)
@@ -15,20 +16,27 @@ if not api_key:
     print(error_message)
     sys.exit(1)
 
-# Create an instance of the D-ID Animations class
-animations = Animations(api_key)
+# Create an instance of the D-ID Talks class
+talks = Talks(api_key)
 
-# Call the method to get the animations created
+# Call the method to get the talks created
 try:
-    animations_list = animations.get_all_animations()
+    talks_list = talks.get_all_talks()
 
-    # Process the response
-    if animations_list is not None:
-        print("List of animations:")
-        for animation in animations_list:
-            print(animation)
+    # Process the JSON response
+    # Extract and display some data from the JSON
+    if talks_list is not None:
+        # Access the talks list
+        talks = talks_list['talks']
+
+        # Iterate over the talks
+        for talk in talks:
+            user_data = json.loads(talk.get("user_data", "{}"))
+            thumbnail_url = user_data.get("thumbnail_url")
+            name = talk.get("name")
+            print("Name: " + name + " Thumbnail Url:" + thumbnail_url)
     else:
-        error_message = "Failed to get animations."
+        error_message = "Failed to get talks."
         logging.error(error_message)
         print(error_message)
 except Exception as e:
