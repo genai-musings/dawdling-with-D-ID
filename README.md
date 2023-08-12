@@ -6,9 +6,9 @@
 [![CodeQL](https://github.com/genai-musings/dawdling-with-D-ID/workflows/CodeQL/badge.svg?branch=main)
 [![Markdown Links Check](https://github.com/genai-musings/dawdling-with-D-ID/actions/workflows/md-links.yml/badge.svg)](https://github.com/gaurav-nelson/github-action-markdown-link-check)
 [![Spell-Checker](https://github.com/genai-musings/dawdling-with-D-ID/actions/workflows/spellcheck.yaml/badge.svg)](https://github.com/rojopolis/spellcheck-github-actions)
-[![Unit-Tests](https://github.com/genai-musings/dawdling-with-D-ID/actions/workflows/test.yaml/badge.svg)](https://github.com/actions/setup-python)
+[![Unit-Tests](https://github.com/genai-musings/dawdling-with-D-ID/actions/workflows/test.yml/badge.svg)](https://github.com/actions/setup-python)
 [![Code-Coverage](https://github.com/genai-musings/dawdling-with-D-ID/actions/workflows/coverage.yaml/badge.svg)](https://github.com/actions/setup-python)
-
+[![Docker-Build-Push](https://github.com/genai-musings/dawdling-with-D-ID/actions/workflows/docker-build-push.yml/badge.svg)](https://hub.docker.com/)
 
 Repository for dawdling with D-ID Studio.
 
@@ -33,6 +33,46 @@ You can generate talks using a trial account at [D-ID Studio](https://studio.d-i
 
 ```shell
 pytest
+```
+
+## To build and run an instance of a Docker image locally.
+
+The username and password for Docker Hub are stored as secrets this GitHub repository.
+
+**Note:** To set up the secrets in your GitHub repository, go to the repository page, navigate to the "Settings" tab, and then select "Secrets" from the left menu. Add a secret named DOCKERHUB_USERNAME with the Docker Hub username to be used, and another secret named DOCKERHUB_PASSWORD with the Docker Hub password to be used.
+
+### Build
+
+Build the Docker image.
+
+```shell
+docker build -t dawdling-with-d-id .
+```
+
+### Run
+
+Run the Docker image as a container.
+
+```shell
+export DID_KEY="Your D-ID key"
+docker run -it -e DID_KEY= "Your D-ID Key" dawdling-with-d-id
+```
+
+## To pull and run an instance of the Docker image from Docker Hub
+
+### Pull
+
+```shell
+docker pull <dockerhub-username>/dawdling-with-d-id:<tag>
+```
+
+Replace <dockerhub-username> with your Docker Hub username and <tag> with the specific tag of the Docker image you want to pull.
+
+### Run
+
+```shell
+export DID_KEY="Your D-ID key"
+docker run -it -e DID_KEY= "Your D-ID Key" <dockerhub-username>/dawdling-with-d-id:<tag>
 ```
 
 ## D-ID Studio API Reference
