@@ -6,6 +6,11 @@ codeowners
 CODEOWNERS
 CodeQL
 Dependabot
+Dockerfile
+Dockerized
+DOCKERHUB
+DOCKERHUB_USERNAME
+DOCKERHUB_PASSWORD
 gitignore
 Linter
 linters
