@@ -27,7 +27,7 @@ class Talks:
         }
 
         try:
-            response = requests.get(self.url, headers=headers, timeout=None)
+            response = requests.get(self.url, headers=headers, timeout=30)
             response.raise_for_status()  # Raise exception for non-2xx status codes
             talks = response.json()
             return talks

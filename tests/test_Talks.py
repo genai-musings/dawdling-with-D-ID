@@ -39,7 +39,7 @@ class TestTalks(unittest.TestCase):
                 "Authorization": f"Basic {self.api_key}",
                 "Accept": "application/json",
             },
-            timeout=None,
+            timeout=30,
         )
         self.assertEqual(result, ["talk1", "talk2"])
 
