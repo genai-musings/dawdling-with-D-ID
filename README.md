@@ -20,7 +20,7 @@ Repository for dawdling with D-ID Studio.
 Your D-ID API key needs to be passed to program via an environment variable
 
 ```shell
-export DID_KEY="Your DID Api key"
+export DID_KEY="Your D-ID key"
 python main.py
 ```
 
@@ -56,7 +56,7 @@ Run the Docker image as a container.
 
 ```shell
 export DID_KEY="Your D-ID key"
-docker run -it -e DID_KEY= "Your D-ID Key" dawdling-with-d-id
+docker run -it -e DID_KEY=$DID_KEY dawdling-with-d-id
 ```
 
 ## To pull and run an instance of the Docker image from Docker Hub
@@ -73,7 +73,7 @@ Replace <dockerhub-username> with your Docker Hub username and <tag> with the sp
 
 ```shell
 export DID_KEY="Your D-ID key"
-docker run -it -e DID_KEY= "Your D-ID Key" <dockerhub-username>/dawdling-with-d-id:<tag>
+docker run -it -e DID_KEY=$DID_KEY <dockerhub-username>/dawdling-with-d-id:<tag>
 ```
 
 ## D-ID Studio API Reference
