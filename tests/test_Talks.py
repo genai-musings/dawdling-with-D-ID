@@ -14,7 +14,6 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 
 from didTalks import Talks
 
-
 class TestTalks(unittest.TestCase):
     def setUp(self):
         self.api_key = "dummy_api_key"
@@ -59,6 +58,51 @@ class TestTalks(unittest.TestCase):
         mock_logging_error.assert_called_once_with(
             f"Error getting talks: {exception_mock}"
         )
+
+    # Test case to validate the create_talk method with a successful response
+    @patch('requests.post')
+    def test_create_talk_success(self, mock_post):
+        # Create a mock response object for a successful API call
+        mock_response = MagicMock()
+        mock_response.json.return_value = {"id": "tlk_TestTalk123", "name": "Test Talk"}
+
+        # Configure the mock post function to return the mock response
+        mock_post.return_value = mock_response
+
+        # Create an instance of the Talks class with the mock API key
+        talks = Talks(self.api_key)
+
+        # Call the create_talk method with test data
+        talk_name = "Test Talk"
+        talk_text = "This is a test talk."
+        talk_image_url = "https://example.com/image.jpg"
+        created_talk = talks.create_talk(talk_name, talk_text, talk_image_url)
+
+        # Check if the response matches the expected result
+        expected_result = {"id": "tlk_TestTalk123", "name": "Test Talk"}
+        self.assertEqual(created_talk, expected_result)
+
+    # Test case to validate the create_talk method when an exception occurs
+    @patch('requests.post')
+    def test_create_talk_failure(self, mock_post):
+        # Create a mock response object for a failed API call
+        mock_response = MagicMock()
+        mock_response.raise_for_status.side_effect = Exception("API request failed")
+
+        # Configure the mock post function to return the mock response
+        mock_post.return_value = mock_response
+
+        # Create an instance of the Talks class with the mock API key
+        talks = Talks(self.api_key)
+
+        # Call the create_talk method with test data
+        talk_name = "Test Talk"
+        talk_text = "This is a test talk."
+        talk_image_url = "https://example.com/image.jpg"
+
+        # Verify that the method raises an exception for a failed API call
+        with self.assertRaises(Exception):
+            talks.create_talk(talk_name, talk_text, talk_image_url)
 
 if __name__ == "__main__":
     unittest.main()
