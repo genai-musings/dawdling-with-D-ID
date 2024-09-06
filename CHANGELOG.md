@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.0] - 2024-09-06
+
+- [ADDED] Safety GitHub Action workflow to check Python dependencies for known security vulnerabilities.
+- [ADDED] Trivy scan of the Docker image for vulnerabilities
+- [FIXED] Vulnerabilities in docker images reported by Trivy
+- [CHANGED] Updates to README.md
+
 ## [1.6.0] - 2023-10-19
 
 - [ADDED] Talk creation from text and image URL feature
