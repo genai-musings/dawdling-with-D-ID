@@ -43,14 +43,14 @@ def create_talk():
         if not talk_text:
             sys.exit()
 
-        print("\n\nEnter the URL of the image to use for the talk")
-        print("Leave empty and press 'Return' to exit.\n\n")
-        talk_image_url = str(input())
+        #print("\n\nEnter the URL of the image to use for the talk")
+        #print("Leave empty and to use the default image provided by D-ID.\n\n")
+        #talk_image_url = str(input())
 
-        if not talk_image_url:
-            sys.exit()
+        #if not talk_image_url:
+        #    sys.exit()
 
-        talk = talks_api.create_talk(talk_name, talk_text, talk_image_url)
+        talk = talks_api.create_talk(talk_name, talk_text)#, talk_image_url)
         # Note: You can comment the previous line and uncomment the following line to develop
         # and test without burning credits
         #talk = {'id': 'tlk_Testing123', 'created_at': '2023-10-19T08:38:11.699Z','created_by': 'auth0|testing123', 'status': 'created', 'object': 'talk'}
@@ -85,9 +85,11 @@ def get_all_talks():
 
             for talk in talks:
                 user_data = json.loads(talk.get("user_data", "{}"))
-                name = talk.get("name")
+                name = talk["name"] if talk.get("name") is not None else ""
                 talk_id = talk.get("id")
-                print("Name: " + name + " Talk: https://studio.d-id.com/?video=" + talk_id)
+                result_url = talk.get("result_url")
+                print("Name: " + name + " Talk ID: " + talk_id + " Result URL: " + result_url + "\n")
+
         else:
             error_message = "Failed to get talks."
             logging.error(error_message)
