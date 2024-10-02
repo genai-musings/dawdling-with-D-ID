@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.8.0] - 2024-10-02
 
 - [CHANGED] method to retrieve created talks
+- [FIXED] upgraded version of upload-artifact in coverage workflow
 
 ## [1.7.0] - 2024-09-06
 
